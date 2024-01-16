@@ -2,15 +2,66 @@
 <html>
 	<head>
 		<title>КосмоЗвук</title>
-		<script src='https://code.jquery.com/jquery-3.7.1.min.js' integrity='sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=' crossorigin='anonymous'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin='anonymous'></script>
         <link rel="stylesheet" href="./style.css">
 	</head>
 	<body>
 		<div class="container">
-			<div class="earth"><img src="./earth.png"></div>
+			<div class="base">
+				<img src="./base.png" id="base">
+			</div>
+			<div class="earth">
+				<img src="./earth.png" id='earth'>
+			</div>
+			<div class="dish">
+				<img src="./dish.png" id="dish">
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript">
-		
+
+		$('.earth').css({'height': `${$('#earth').height()}px`});
+		$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10}px`});
+		$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10}px`});
+
+		var mouseXY = {};
+	    $( document ).on( "mousemove", function( event ) {
+			mouseXY.X = event.pageX; 
+			mouseXY.Y = event.pageY;
+	    });
+	    var fromTop = $(".dish");
+	    var fromLeft = $("#dish");
+	    var prevXY = {X: null, Y: null};
+	    var cowInterval = setInterval(function()
+	    {
+	    
+	      
+			if(prevXY.Y != mouseXY.Y || prevXY.X != mouseXY.X) {
+
+				var tp = fromTop.position().top;
+				var lft = fromLeft.position().left;
+				var diffX = mouseXY.X - lft;
+				var diffY = tp - mouseXY.Y;
+				var tan = diffX / diffY;
+
+				var degrees = Math.atan(tan)* 180 / Math.PI;
+				
+				if(diffX > 0 && diffY < 0) {
+					degrees += 180;
+				}
+				else if(diffX < 0 && diffY < 0) {
+					degrees -= 180;
+				}
+				
+				if(degrees >= -60 && degrees <= 60){
+
+					prevXY.X = mouseXY.X;
+					prevXY.Y = mouseXY.Y;
+					fromLeft.css({transform: "rotate(" + degrees + "deg)"});
+				}
+		    }
+	    }, 10);
+
+
 	</script>
 </html>
