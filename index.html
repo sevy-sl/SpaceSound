@@ -20,9 +20,34 @@
 	</body>
 	<script type="text/javascript">
 
-		$('.earth').css({'height': `${$('#earth').height()}px`});
-		$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10}px`});
-		$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10}px`});
+		function rsize(phone, wide) {
+			if (phone == true){
+				var a = 20;
+				var b = 5;
+			} else if (wide == true) {
+				var a = 10;
+				var b = 2;
+			} else {
+				var a = 16;
+				var b = 3;
+			}
+
+			$('#earth').css({'width': `${5 * a}%`});
+			$('#base').css({'width': `${5 * b}%`});
+			$('#dish').css({'width': `${5 * (b + 0.5)}%`});
+
+
+			$('.earth').css({'height': `${$('#earth').height()}px`});
+			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10}px`});
+			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10}px`});
+			
+		}
+
+		rsize(window.innerHeight > window.innerWidth, window.innerHeight <= window.innerWidth / 2);	
+
+		$(window).on('resize', function(){
+		    rsize(window.innerHeight > window.innerWidth, window.innerHeight <= window.innerWidth / 2);
+		});
 
 		var mouseXY = {};
 	    $( document ).on( "mousemove", function( event ) {

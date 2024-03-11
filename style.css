@@ -31,10 +31,6 @@ body {
 	z-index: 2;
 }
 
-#base {
-	width: 15%;
-}
-
 .earth {
 	position: fixed;
 	bottom: 0;	
@@ -44,9 +40,6 @@ body {
 	z-index: 1;
 }
 
-#earth {
-	width: 80%;
-}
 
 .dish {
 	position: fixed;
@@ -54,8 +47,4 @@ body {
 	display: block;
 	text-align: center;
 	z-index: 3;
-}
-
-#dish {
-	width: 15%;
 }
