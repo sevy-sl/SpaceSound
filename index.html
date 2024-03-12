@@ -24,12 +24,9 @@
 			if (phone == true){
 				var a = 20;
 				var b = 5;
-			} else if (wide == true) {
+			} else {
 				var a = 10;
 				var b = 2;
-			} else {
-				var a = 16;
-				var b = 3;
 			}
 
 			$('#earth').css({'width': `${5 * a}%`});
@@ -43,10 +40,10 @@
 			
 		}
 
-		rsize(window.innerHeight > window.innerWidth, window.innerHeight <= window.innerWidth / 2);	
+		rsize(window.innerHeight > (window.innerWidth * 0.9));	
 
 		$(window).on('resize', function(){
-		    rsize(window.innerHeight > window.innerWidth, window.innerHeight <= window.innerWidth / 2);
+		    rsize(window.innerHeight > (window.innerWidth * 0.9));
 		});
 
 		var mouseXY = {};
@@ -78,7 +75,7 @@
 					degrees -= 180;
 				}
 				
-				if(degrees >= -60 && degrees <= 60){
+				if(degrees >= -50 && degrees <= 50){
 
 					prevXY.X = mouseXY.X;
 					prevXY.Y = mouseXY.Y;
