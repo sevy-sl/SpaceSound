@@ -4,9 +4,34 @@
 		<title>КосмоЗвук</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin='anonymous'></script>
         <link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
+			<div class="objects js-loop">
+				
+				<section class="jupiter">
+					<a data-fancybox href='#hidden1' class="fancybox"><img src="jupiter.gif" alt="Jupiter" class="jupiterGif"></a>
+					<div class="hidden" id="hidden1">Аудиоклип был зафиксирован космическим аппаратом НАСА "Юнона", когда тот пересек границу огромного магнитного поля Юпитера и попал в ударную волну. Ударная волна возникает, когда магнитосфера астрофизического объекта (в данном случае Юпитера) взаимодействует с близлежащей текучей окружающей плазмой, такой как солнечный ветер. Это похоже на звуковой удар. Кодовое название: "Рык Юпитера"<br><br>
+					<audio controls>
+						<source src="marsquake.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					</div>
+				</section>
+				<section class="mars">
+					<a data-fancybox href='#hidden2' class="fancybox"><img src="mars.gif" alt="Mars" class="marsGif"></a>
+					<div class="hidden" id="hidden2">Аудиоклип был снят аппаратом НАСА InSight 6 апреля 2019 года. Звук подчеркивает, насколько сейсмически шумной может быть марсианская поверхность. Кодовое название: "Марсотрясение"<br><br>
+					<audio controls>
+						<source src="marsquake.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</section>
+				<section class="jupiter is-clone"><img src="jupiter.gif" alt="Jupiter" class="jupiterGif" ></section>
+				<section class="mars is-clone"><img src="mars.gif" alt="Mars" class="marsGif"></section>
+			</div>
+
 			<div class="base">
 				<img src="./base.png" id="base">
 			</div>
@@ -24,20 +49,28 @@
 			if (phone == true){
 				var a = 20;
 				var b = 5;
+				var c = 1;
+				var d = (10 / 3);
+				var e = 4;
 			} else {
 				var a = 10;
 				var b = 2;
+				var c = 0.5;
+				var d = 5;
+				var e = 7;
 			}
 
 			$('#earth').css({'width': `${5 * a}%`});
 			$('#base').css({'width': `${5 * b}%`});
-			$('#dish').css({'width': `${5 * (b + 0.5)}%`});
+			$('#dish').css({'width': `${5 * (b + c)}%`});
+			$('.marsGif').css({'width': `${window.innerWidth / d * 2}px`});
+			$('.jupiterGif').css({'width': `${window.innerWidth / e * 2 }px`});
+			$('.jupiterGif').css({'left': `${window.innerWidth - $('.jupiterGif').width()}px`});
 
-
+			$('.jupiter').css({'height': `${$('.jupiterGif').height()}px`});
 			$('.earth').css({'height': `${$('#earth').height()}px`});
 			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10}px`});
 			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10}px`});
-			
 		}
 
 		rsize(window.innerHeight > (window.innerWidth * 0.9));	
@@ -84,6 +117,97 @@
 		    }
 	    }, 10);
 
+	    var doc = window.document,
+		context = doc.querySelector('.js-loop'),
+		clones = context.querySelectorAll('.is-clone'),
+		disableScroll = false,
+		scrollHeight = 0,
+		scrollPos = 0,
+		clonesHeight = 0,
+		i = 0;
 
+		function getScrollPos () {
+		  return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
+		}
+
+		function setScrollPos (pos) {
+		  context.scrollTop = pos;
+		}
+
+		function getClonesHeight () {
+		  clonesHeight = 0;
+
+		  for (i = 0; i < clones.length; i += 1) {
+		    clonesHeight = clonesHeight + clones[i].offsetHeight;
+		  }
+
+		  return clonesHeight;
+		}
+
+		function reCalc () {
+		  scrollPos = getScrollPos();
+		  scrollHeight = context.scrollHeight;
+		  clonesHeight = getClonesHeight();
+
+		  if (scrollPos <= 0) {
+		    setScrollPos(1); // Scroll 1 pixel to allow upwards scrolling
+		  }
+		}
+
+		function scrollUpdate () {
+		  if (!disableScroll) {
+		    scrollPos = getScrollPos();
+
+		    if (clonesHeight + scrollPos >= scrollHeight) {
+		      // Scroll to the top when you’ve reached the bottom
+		      setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
+		      disableScroll = true;
+		    } else if (scrollPos <= 0) {
+		      // Scroll to the bottom when you reach the top
+		      setScrollPos(scrollHeight - clonesHeight);
+		      disableScroll = true;
+		    }
+		  }
+
+		  if (disableScroll) {
+		    // Disable scroll-jumping for a short time to avoid flickering
+		    window.setTimeout(function () {
+		      disableScroll = false;
+		    }, 40);
+		  }
+		}
+
+		function init () {
+		  reCalc();
+		  
+		  context.addEventListener('scroll', function () {
+		    window.requestAnimationFrame(scrollUpdate);
+		  }, false);
+
+		  window.addEventListener('resize', function () {
+		    window.requestAnimationFrame(reCalc);
+		  }, false);
+		}
+
+		if (document.readyState !== 'loading') {
+		  init()
+		} else {
+		  doc.addEventListener('DOMContentLoaded', init, false)
+		}
+
+		$(".fancybox").fancybox({
+			helpers : { 
+			 overlay: {
+			  opacity: 0.8, // or the opacity you want 
+			  css: {'background-color': '#ff0100'} // or your preferred hex color value
+			 } // overlay 
+			} // helpers
+		}); // fancybox
+
+		$('[data-fancybox="gallery"]').fancybox({
+			thumbs : {
+				css : {'background-color': 'black'}
+			}
+		});
 	</script>
 </html>
