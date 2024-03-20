@@ -11,25 +11,47 @@
 		<div class="container">
 			<div class="objects js-loop">
 				
-				<section class="jupiter">
-					<a data-fancybox href='#hidden1' class="fancybox"><img src="jupiter.gif" alt="Jupiter" class="jupiterGif"></a>
-					<div class="hidden" id="hidden1">Аудиоклип был зафиксирован космическим аппаратом НАСА "Юнона", когда тот пересек границу огромного магнитного поля Юпитера и попал в ударную волну. Ударная волна возникает, когда магнитосфера астрофизического объекта (в данном случае Юпитера) взаимодействует с близлежащей текучей окружающей плазмой, такой как солнечный ветер. Это похоже на звуковой удар. Кодовое название: "Рык Юпитера"<br><br>
+				<section class="mars">
+					<a data-fancybox href='#hidden1' class="fancybox"><img src="gifs/mars.gif" alt="Mars" class="gifs marsGif"></a>
+					<div class="hidden" id="hidden1">Аудиоклип был снят аппаратом НАСА InSight 6 апреля 2019 года. Звук подчеркивает, насколько сейсмически шумной может быть марсианская поверхность. Кодовое название: "Марсотрясение".<br><br>
 					<audio controls>
-						<source src="marsquake.mp3" type="audio/mpeg">
+						<source src="mp3/marsquake.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</section>
+				<section class="jupiter">
+					<a data-fancybox href='#hidden2' class="fancybox"><img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif"></a>
+					<div class="hidden" id="hidden2">Аудиоклип был зафиксирован космическим аппаратом НАСА "Юнона", когда тот пересек границу огромного магнитного поля Юпитера и попал в ударную волну. Ударная волна возникает, когда магнитосфера астрофизического объекта (в данном случае Юпитера) взаимодействует с близлежащей текучей окружающей плазмой, такой как солнечный ветер. Это похоже на звуковой удар. Кодовое название: "Рык Юпитера".<br><br>
+					<audio controls>
+						<source src="mp3/roar.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
 					</audio>
 					</div>
 				</section>
-				<section class="mars">
-					<a data-fancybox href='#hidden2' class="fancybox"><img src="mars.gif" alt="Mars" class="marsGif"></a>
-					<div class="hidden" id="hidden2">Аудиоклип был снят аппаратом НАСА InSight 6 апреля 2019 года. Звук подчеркивает, насколько сейсмически шумной может быть марсианская поверхность. Кодовое название: "Марсотрясение"<br><br>
+				<section class="saturn">
+					<a data-fancybox href='#hidden3' class="fancybox"><img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif"></a>
+					<div class="hidden" id="hidden3">Звук в этом ролике показывает мощное взаимодействие плазменных волн, движущихся от Сатурна к его луне Энцеладу. Кодовое название: "Звуки Сатурна".<br><br>
 					<audio controls>
-						<source src="marsquake.mp3" type="audio/mpeg">
+						<source src="mp3/saturn_sounds.mp3" type="audio/mpeg">
 						Your browser does not support the audio element.
 					</audio>
+					</div>
 				</section>
-				<section class="jupiter is-clone"><img src="jupiter.gif" alt="Jupiter" class="jupiterGif" ></section>
-				<section class="mars is-clone"><img src="mars.gif" alt="Mars" class="marsGif"></section>
+				<section class="rings">
+					<a data-fancybox href='#hidden4' class="fancybox"><img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif"></a>
+					<div class="hidden" id="hidden4">Эти помехи были зафиксированы прибором Cassini Radio and Plasms Wave Science, когда аппарат пересекал плоскость колец Сатурна. Кодовое название: "Пересечение колец Сатурна".<br><br>
+					<audio controls>
+						<source src="mp3/rings.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					</div>
+				</section>
+
+
+				<section class="mars is-clone"><a data-fancybox href='#hidden1' class="fancybox"><img src="gifs/mars.gif" alt="Mars" class="gifs marsGif"></a></section>
+				<section class="jupiter is-clone"><a data-fancybox href='#hidden2' class="fancybox"><img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif"></a></section>
+				<section class="saturn is-clone"><a data-fancybox href='#hidden3' class="fancybox"><img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif"></a></section>
+				<section class="rings is-clone"><a data-fancybox href='#hidden4' class="fancybox"><img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif"></a></section>
 			</div>
 
 			<div class="base">
@@ -45,29 +67,44 @@
 	</body>
 	<script type="text/javascript">
 
-		function rsize(phone, wide) {
+		function rsize(phone) {
 			if (phone == true){
-				var a = 20;
-				var b = 5;
-				var c = 1;
-				var d = (10 / 3);
-				var e = 4;
+				var earth = 20,
+				base = 5,
+				additional = 1,
+				mars = (10 / 3),
+				jupiter = 4,
+				saturn = 3,
+				rings = 4
+				hidden = 5;
+
 			} else {
-				var a = 10;
-				var b = 2;
-				var c = 0.5;
-				var d = 5;
-				var e = 7;
+				var earth = 10,
+				base = 2,
+				additional = 0.5,
+				mars = 5,
+				jupiter = 7,
+				saturn = 5,
+				rings = (6.5),
+				hidden = 2;
 			}
 
-			$('#earth').css({'width': `${5 * a}%`});
-			$('#base').css({'width': `${5 * b}%`});
-			$('#dish').css({'width': `${5 * (b + c)}%`});
-			$('.marsGif').css({'width': `${window.innerWidth / d * 2}px`});
-			$('.jupiterGif').css({'width': `${window.innerWidth / e * 2 }px`});
-			$('.jupiterGif').css({'left': `${window.innerWidth - $('.jupiterGif').width()}px`});
+			$('#earth').css({'width': `${5 * earth}%`});
+			$('#base').css({'width': `${5 * base}%`});
+			$('#dish').css({'width': `${5 * (base + additional)}%`});
+			
+			$('.marsGif').css({'width': `${window.innerWidth / mars * 2}px`});
+			$('.jupiterGif').css({'width': `${window.innerWidth / jupiter * 2 }px`});
+			$('.saturnGif').css({'width': `${window.innerWidth / saturn * 2 }px`});
+			$('.ringsGif').css({'width': `${window.innerWidth / rings * 2 }px`});
+			
+			$('.hidden').css({'font-size': `${2 * hidden}vw`});
+		    
 
-			$('.jupiter').css({'height': `${$('.jupiterGif').height()}px`});
+		    $(".gifs.right").each(function () {
+		        $(this).css({'left': `${$('.container').width() - $(this).width()}px`});
+		    })
+
 			$('.earth').css({'height': `${$('#earth').height()}px`});
 			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10}px`});
 			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10}px`});
@@ -117,7 +154,8 @@
 		    }
 	    }, 10);
 
-	    var doc = window.document,
+		
+		var doc = window.document,
 		context = doc.querySelector('.js-loop'),
 		clones = context.querySelectorAll('.is-clone'),
 		disableScroll = false,
@@ -127,87 +165,71 @@
 		i = 0;
 
 		function getScrollPos () {
-		  return (context.pageYOffset || context.scrollTop) - (context.clientTop || 0);
+			return (context.scrollTop);
 		}
 
 		function setScrollPos (pos) {
-		  context.scrollTop = pos;
+			context.scrollTop = pos;
 		}
 
 		function getClonesHeight () {
-		  clonesHeight = 0;
+			clonesHeight = 0;
 
-		  for (i = 0; i < clones.length; i += 1) {
-		    clonesHeight = clonesHeight + clones[i].offsetHeight;
-		  }
+			for (i = 0; i < clones.length; i += 1) {
+				clonesHeight = clonesHeight + clones[i].offsetHeight;
+			}
 
-		  return clonesHeight;
-		}
+			return clonesHeight;
+			}
 
 		function reCalc () {
-		  scrollPos = getScrollPos();
-		  scrollHeight = context.scrollHeight;
-		  clonesHeight = getClonesHeight();
+			scrollPos = getScrollPos();
+			scrollHeight = context.scrollHeight;
+			clonesHeight = getClonesHeight();
 
-		  if (scrollPos <= 0) {
-		    setScrollPos(1); // Scroll 1 pixel to allow upwards scrolling
-		  }
+			if (scrollPos <= 0) {
+				setScrollPos(1); 
+			}
 		}
 
 		function scrollUpdate () {
-		  if (!disableScroll) {
-		    scrollPos = getScrollPos();
+			if (!disableScroll) {
+			scrollPos = getScrollPos();
 
-		    if (clonesHeight + scrollPos >= scrollHeight) {
-		      // Scroll to the top when you’ve reached the bottom
-		      setScrollPos(1); // Scroll down 1 pixel to allow upwards scrolling
-		      disableScroll = true;
-		    } else if (scrollPos <= 0) {
-		      // Scroll to the bottom when you reach the top
-		      setScrollPos(scrollHeight - clonesHeight);
-		      disableScroll = true;
-		    }
-		  }
+		    if (clonesHeight + scrollPos >= scrollHeight) {   
+				setScrollPos(1);
+				disableScroll = true;
+			} else if (scrollPos <= 0) {
+				setScrollPos(scrollHeight - clonesHeight);
+				disableScroll = true;
+			}
+		}
 
-		  if (disableScroll) {
-		    // Disable scroll-jumping for a short time to avoid flickering
-		    window.setTimeout(function () {
-		      disableScroll = false;
-		    }, 40);
-		  }
+			if (disableScroll) {
+				window.setTimeout(function () {
+					disableScroll = false;
+				}, 40);
+			}
 		}
 
 		function init () {
-		  reCalc();
+			reCalc();
 		  
-		  context.addEventListener('scroll', function () {
-		    window.requestAnimationFrame(scrollUpdate);
-		  }, false);
+			context.addEventListener('scroll', function () {
+				window.requestAnimationFrame(scrollUpdate);
+			}, false);
 
-		  window.addEventListener('resize', function () {
-		    window.requestAnimationFrame(reCalc);
-		  }, false);
+			window.addEventListener('resize', function () {
+				window.requestAnimationFrame(reCalc);
+			}, false);
 		}
 
 		if (document.readyState !== 'loading') {
-		  init()
+			init();
 		} else {
-		  doc.addEventListener('DOMContentLoaded', init, false)
+			doc.addEventListener('DOMContentLoaded', init, false);
 		}
 
-		$(".fancybox").fancybox({
-			helpers : { 
-			 overlay: {
-			  opacity: 0.8, // or the opacity you want 
-			  css: {'background-color': '#ff0100'} // or your preferred hex color value
-			 } // overlay 
-			} // helpers
-		}); // fancybox
-
-		$('[data-fancybox="gallery"]').fancybox({
-			thumbs : {
-				css : {'background-color': 'black'}
-			}
-		});
+		
 	</script>
 </html>

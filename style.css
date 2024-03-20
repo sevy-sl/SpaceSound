@@ -35,10 +35,12 @@ body {
 }
 
 .objects {
+	position: relative;
 	height: 100%;
 	width: 100%;
 	z-index: 1;
 	overflow: auto;
+	-webkit-overflow-scrolling: touch;
 }
 
 .base {
@@ -68,31 +70,18 @@ body {
 	z-index: 4;
 }
 
-.mars {
-	position: relative;
-	left: 0%;
-	width: 100%;
-}
-
-.marsGif {
+.gifs {
 	border-radius: 100%;
 	outline: solid;
 	outline-color: #004196;
 }
 
-.jupiter {
-	width: 100%;
-}
-
-.jupiterGif {
+.gifs.right {
 	position: relative;
-	border-radius: 100%;
-	outline: solid;
-	outline-color: #004196;
 }
 
 .objects::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .hidden {
@@ -101,13 +90,23 @@ body {
 	width: 90%;
 	height: 90%;
 	color: white;
-	font-size: 40px;
 	font-family: 'starman';
 }
 
 .hidden.fancybox-content{
-    background: url(./space.jpeg) no-repeat center center fixed;
+    background: url(./space.jpeg);
+    background-size: cover;
     outline: solid 7px;
     border-radius: 20px;
     outline-color: rgba(0, 0, 0, 0.75);
+}
+
+audio {
+	width: 40%;
+}
+
+section {
+	position: relative;
+	margin-top: 2%;
+	width: 100%;
 }
