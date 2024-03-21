@@ -10,10 +10,20 @@
 	<body>
 		<div class="container">
 			<div class="objects js-loop">
-				
+
+				<section class="holes">
+					<img src="gifs/holes.gif" alt="Holes" class="gifs left holesGif">
+					<a data-fancybox href='#5' class="fancybox" id="fancybox5"></a>
+					<div class="hidden" id="5">Звуки, которые мы слышим в этом ролике, на самом деле являются гравитационными волнами, которые образовались после столкновения двух черных дыр. Затем эти волны были преобразованы в звуковые. Кодовое название: "Столкновение черных дыр".<br><br>
+						<audio controls>
+							<source src="mp3/holes.mp3" type="audio/mpeg">
+							Your browser does not support the audio element.
+						</audio>
+					</div>
+				</section>
 				<section class="rings">
 					<img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif">
-					<a data-fancybox href='#4' class="fancybox" id='fancybox4'></a>
+					<a data-fancybox href='#4' class="fancybox" id="fancybox4"></a>
 					<div class="hidden" id="4">Эти помехи были зафиксированы прибором Cassini Radio and Plasms Wave Science, когда аппарат пересекал плоскость колец Сатурна. Кодовое название: "Пересечение колец Сатурна".<br><br>
 						<audio controls>
 							<source src="mp3/rings.mp3" type="audio/mpeg">
@@ -23,7 +33,7 @@
 				</section>
 				<section class="saturn">
 					<img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif">
-					<a data-fancybox href='#3' class="fancybox" id='fancybox3'></a>
+					<a data-fancybox href='#3' class="fancybox" id="fancybox3"></a>
 					<div class="hidden" id="3">Звук в этом ролике показывает мощное взаимодействие плазменных волн, движущихся от Сатурна к его луне Энцеладу. Кодовое название: "Звуки Сатурна".<br><br>
 						<audio controls>
 							<source src="mp3/saturn_sounds.mp3" type="audio/mpeg">
@@ -33,7 +43,7 @@
 				</section>
 				<section class="jupiter">
 					<img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif">
-					<a data-fancybox href='#2' class="fancybox" id='fancybox2'></a>
+					<a data-fancybox href='#2' class="fancybox" id="fancybox2"></a>
 					<div class="hidden" id="2">Аудиоклип был зафиксирован космическим аппаратом НАСА "Юнона", когда тот пересек границу огромного магнитного поля Юпитера и попал в ударную волну. Ударная волна возникает, когда магнитосфера астрофизического объекта (в данном случае Юпитера) взаимодействует с близлежащей текучей окружающей плазмой, такой как солнечный ветер. Это похоже на звуковой удар. Кодовое название: "Рык Юпитера".<br><br>
 						<audio controls>
 							<source src="mp3/roar.mp3" type="audio/mpeg">
@@ -43,7 +53,7 @@
 				</section>
 				<section class="mars">
 					<img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif">
-					<a data-fancybox href='#1' class="fancybox" id='fancybox1'></a>
+					<a data-fancybox href='#1' class="fancybox" id="fancybox1"></a>
 					<div class="hidden" id="1">Аудиоклип был снят аппаратом НАСА InSight 6 апреля 2019 года. Звук подчеркивает, насколько сейсмически шумной может быть марсианская поверхность. Кодовое название: "Марсотрясение".<br><br>
 						<audio controls>
 							<source src="mp3/marsquake.mp3" type="audio/mpeg">
@@ -52,11 +62,11 @@
 					</div>
 				</section>
 
-
-				<section class="rings is-clone"><img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif"></section>
-				<section class="saturn is-clone"><img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif"></section>
-				<section class="jupiter is-clone"><img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif"></section>
-				<section class="mars is-clone"><img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif"></section>
+				<section class="holes is-clone"><img src="gifs/holes.gif" alt="Holes" class="gifs left holesGif"><a data-fancybox href='#5' class="fancybox" id="fancybox5clone"></a></section>
+				<section class="rings is-clone"><img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif"><a data-fancybox href='#4' class="fancybox" id="fancybox4clone"></a></section>
+				<section class="saturn is-clone"><img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif"><a data-fancybox href='#3' class="fancybox" id="fancybox3clone"></a></section>
+				<section class="jupiter is-clone"><img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif"><a data-fancybox href='#2' class="fancybox" id="fancybox2clone"></a></section>
+				<section class="mars is-clone"><img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif"><a data-fancybox href='#1' class="fancybox" id="fancybox1clone"></a></section>
 			</div>
 
 			<div class="base">
@@ -81,6 +91,7 @@
 				jupiter = 4,
 				saturn = 3,
 				rings = 4,
+				holes = 3,
 				hidden = 5;
 			} else {
 				var earth = 10,
@@ -90,6 +101,7 @@
 				jupiter = 7,
 				saturn = 5,
 				rings = (6.5),
+				holes = 5.5,
 				hidden = 2;
 			}
 
@@ -101,6 +113,7 @@
 			$('.jupiterGif').css({'width': `${window.innerWidth / jupiter * 2 }px`});
 			$('.saturnGif').css({'width': `${window.innerWidth / saturn * 2 }px`});
 			$('.ringsGif').css({'width': `${window.innerWidth / rings * 2 }px`});
+			$('.holesGif').css({'width': `${window.innerWidth / holes * 2 }px`});
 			
 			$('.hidden').css({'font-size': `${2 * hidden}vw`});
 		    
