@@ -91,6 +91,7 @@ body {
 	height: 90%;
 	color: white;
 	font-family: 'starman';
+	line-height: 1.6;
 }
 
 .hidden.fancybox-content{

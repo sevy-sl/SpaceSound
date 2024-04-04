@@ -61,12 +61,23 @@
 						</audio>
 					</div>
 				</section>
+				<section>
+					<img src="gifs/sun.gif" alt="Sun" class="gifs right sunGif">
+						<a data-fancybox href='#6' class="fancybox" id="fancybox6"></a>
+					<div class="hidden" id="6">Тщательный анализ данных, полученных с зонда НАСА Parker Solar Probe в 2021 году, показал, что электромагнитные "Волны-Свистуны", названные так потому, что первые радисты принимали эти жуткие, нисходящие звуки за свист человека, неожиданно отсутствуют в некоторых областях верхней атмосферы Солнца. Это открытие может привести к лучшему пониманию физики солнечного ветра, а значит, и к более точным прогнозам космической погоды и того, как она может повлиять на нас здесь, на Земле. Кодовое название: "Волны-Свистуны"<br><br>
+						<audio controls>
+							<source src="mp3/sun.mp3" type="audio/mpeg">
+							Your browser does not support the audio element.
+						</audio>
+					</div>
+				</section>
 
 				<section class="holes is-clone"><img src="gifs/holes.gif" alt="Holes" class="gifs left holesGif"><a data-fancybox href='#5' class="fancybox" id="fancybox5clone"></a></section>
 				<section class="rings is-clone"><img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif"><a data-fancybox href='#4' class="fancybox" id="fancybox4clone"></a></section>
 				<section class="saturn is-clone"><img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif"><a data-fancybox href='#3' class="fancybox" id="fancybox3clone"></a></section>
 				<section class="jupiter is-clone"><img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif"><a data-fancybox href='#2' class="fancybox" id="fancybox2clone"></a></section>
 				<section class="mars is-clone"><img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif"><a data-fancybox href='#1' class="fancybox" id="fancybox1clone"></a></section>
+				<section class="sun is-clone"><img src="gifs/sun.gif" alt="Sun" class="gifs right marsGif"><a data-fancybox href='#6' class="fancybox" id="fancybox6clone"></a></section>
 			</div>
 
 			<div class="base">
@@ -92,6 +103,7 @@
 				saturn = 3,
 				rings = 4,
 				holes = 3,
+				sun = (10 / 3),
 				hidden = 5;
 			} else {
 				var earth = 10,
@@ -102,6 +114,7 @@
 				saturn = 5,
 				rings = (6.5),
 				holes = 5.5,
+				sun = 5,
 				hidden = 2;
 			}
 
@@ -114,6 +127,7 @@
 			$('.saturnGif').css({'width': `${window.innerWidth / saturn * 2 }px`});
 			$('.ringsGif').css({'width': `${window.innerWidth / rings * 2 }px`});
 			$('.holesGif').css({'width': `${window.innerWidth / holes * 2 }px`});
+			$('.sunGif').css({'width': `${window.innerWidth / sun * 2 }px`});
 			
 			$('.hidden').css({'font-size': `${2 * hidden}vw`});
 		    
