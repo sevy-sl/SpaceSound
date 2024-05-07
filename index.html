@@ -122,8 +122,7 @@
 			}
 
 
-			$('#earth').css({'width': `${5 * earth}%`});
-			var earthHeight = 12.5 * earth;
+			$('#earth').css({'width': `${5 * earth}%`, 'height': `${12.5 * earth}px`});
 			$('#base').css({'width': `${5 * base}%`});
 			$('#dish').css({'width': `${5 * (base + additional)}%`});
 			
@@ -141,13 +140,11 @@
 		        $(this).css({'left': `${$('.container').width() - $(this).width()}px`});
 		    })
 
-			$('.earth').css({'height': `${earthHeight}px`});
-			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${earthHeight * 3.5 / 10}px`});
-			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${earthHeight * 3.5 / 10 + $('#base').height() * 6.5 / 10}px`});
+			$('.earth').css({'height': `${$('#earth').height()}px`});
+			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('#earth').height() * 3.5 / 10}px`});
+			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('#earth').height() * 3.5 / 10 + $('#base').height() * 6.5 / 10}px`});
 		}
 
-		console.log($('#earth').height())
-		console.log(window.innerHeight);
 		rsize(window.innerHeight > (window.innerWidth * 0.9));	
 
 		$(window).on('resize', function(){
