@@ -122,9 +122,12 @@
 			}
 
 
-			$('#earth').css({'width': `${5 * earth}%`, 'height': `${12.5 * earth}px`});
+			$('#earth').css({'width': `${5 * earth}%`});
+			$('#earth').css({'height': `${$('#earth').width() / 4.8}px`});
 			$('#base').css({'width': `${5 * base}%`});
+			$('#base').css({'height': `${$('#base').width() / 1.34}px`});
 			$('#dish').css({'width': `${5 * (base + additional)}%`});
+			$('#dish').css({'height': `${$('#dish').width() / 1.39}px`});
 			
 			$('.marsGif').css({'width': `${window.innerWidth / mars * 2}px`});
 			$('.jupiterGif').css({'width': `${window.innerWidth / jupiter * 2 }px`});
