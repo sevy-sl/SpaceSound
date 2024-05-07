@@ -94,6 +94,7 @@
 	<script type="text/javascript">
 
 		function rsize(phone) {
+
 			if (phone == true){
 				var earth = 20,
 				base = 5,
@@ -117,7 +118,9 @@
 				holes = 5.5,
 				sun = 5,
 				hidden = 2;
+				$('.object').css({'margin-top': '2%'});
 			}
+
 
 			$('#earth').css({'width': `${5 * earth}%`});
 			$('#base').css({'width': `${5 * base}%`});
@@ -126,7 +129,7 @@
 			$('.marsGif').css({'width': `${window.innerWidth / mars * 2}px`});
 			$('.jupiterGif').css({'width': `${window.innerWidth / jupiter * 2 }px`});
 			$('.saturnGif').css({'width': `${window.innerWidth / saturn * 2 }px`});
-			$('.ringsGif').css({'width': `${window.innerWidth / rings * 2 }px`});
+			$('.ringsGif').css({'widthx`': `${window.innerWidth / rings * 2 }px`});
 			$('.holesGif').css({'width': `${window.innerWidth / holes * 2 }px`});
 			$('.sunGif').css({'width': `${window.innerWidth / sun * 2 }px`});
 			
@@ -138,10 +141,12 @@
 		    })
 
 			$('.earth').css({'height': `${$('#earth').height()}px`});
-			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10}px`});
-			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10}px`});
+			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('#earth').height() * 3.5 / 10}px`});
+			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('#earth').height() * 3.5 / 10 + $('#base').height() * 6.5 / 10}px`});
 		}
 
+		console.log($('#earth').height())
+		console.log(window.innerHeight);
 		rsize(window.innerHeight > (window.innerWidth * 0.9));	
 
 		$(window).on('resize', function(){
