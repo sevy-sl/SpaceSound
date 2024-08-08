@@ -19,7 +19,7 @@ html {
 
 body {
 	position: absolute;
-	background: url(./space.jpg) no-repeat center center fixed; 
+	background: url(images/space.webp) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -95,7 +95,7 @@ body {
 }
 
 .hidden.fancybox-content{
-    background: url(./space.jpeg);
+    background: url(images/space1.webp);
     background-size: cover;
     outline: solid 7px;
     border-radius: 20px;
