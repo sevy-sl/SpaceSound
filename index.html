@@ -1,334 +1,301 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>КосмоЗвук</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin='anonymous'></script>
-        <link rel="stylesheet" href="./style.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<div class="objects js-loop">
+<head>
+	<title>КосмоЗвук</title>
 
-				<section class="object">
-					<img src="gifs/holes.gif" alt="Holes" class="gifs left holesGif">
-					<a data-fancybox href='#5' class="fancybox" id="fancybox5"></a>
-					<div class="hidden" id="5">Звуки, которые мы слышим в этом ролике, на самом деле являются гравитационными волнами, которые образовались после столкновения двух черных дыр. Затем эти волны были преобразованы в звуковые. Кодовое название: "Столкновение черных дыр".<br><br>
-						<audio controls>
-							<source src="mp3/holes.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-				</section>
-				<section class="object">
-					<img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif">
-					<a data-fancybox href='#4' class="fancybox" id="fancybox4"></a>
-					<div class="hidden" id="4">Эти помехи были зафиксированы прибором Cassini Radio and Plasms Wave Science, когда аппарат пересекал плоскость колец Сатурна. Кодовое название: "Пересечение колец Сатурна".<br><br>
-						<audio controls>
-							<source src="mp3/rings.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-				</section class="object">
-				<section class="saturn">
-					<img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif">
-					<a data-fancybox href='#3' class="fancybox" id="fancybox3"></a>
-					<div class="hidden" id="3">Звук в этом ролике показывает мощное взаимодействие плазменных волн, движущихся от Сатурна к его луне Энцеладу. Кодовое название: "Звуки Сатурна".<br><br>
-						<audio controls>
-							<source src="mp3/saturn_sounds.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-				</section>
-				<section class="object">
-					<img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif">
-					<a data-fancybox href='#2' class="fancybox" id="fancybox2"></a>
-					<div class="hidden" id="2">Аудиоклип был зафиксирован космическим аппаратом НАСА "Юнона", когда тот пересек границу огромного магнитного поля Юпитера и попал в ударную волну. Ударная волна возникает, когда магнитосфера астрофизического объекта (в данном случае Юпитера) взаимодействует с близлежащей текучей окружающей плазмой, такой как солнечный ветер. Это похоже на звуковой удар. Кодовое название: "Рык Юпитера".<br><br>
-						<audio controls>
-							<source src="mp3/roar.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-				</section>
-				<section class="object">
-					<img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif">
-					<a data-fancybox href='#1' class="fancybox" id="fancybox1"></a>
-					<div class="hidden" id="1">Аудиоклип был снят аппаратом НАСА InSight 6 апреля 2019 года. Звук подчеркивает, насколько сейсмически шумной может быть марсианская поверхность. Кодовое название: "Марсотрясение".<br><br>
-						<audio controls>
-							<source src="mp3/marsquake.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-				</section>
-				<section class="object">
-					<img src="gifs/sun.gif" alt="Sun" class="gifs right sunGif">
-					<a data-fancybox href='#6' class="fancybox" id="fancybox6"></a>
-					<div class="hidden" id="6">Тщательный анализ данных, полученных с зонда НАСА Parker Solar Probe в 2021 году, показал, что электромагнитные "Волны-Свистуны", названные так потому, что первые радисты принимали эти жуткие, нисходящие звуки за свист человека, неожиданно отсутствуют в некоторых областях верхней атмосферы Солнца. Это открытие может привести к лучшему пониманию физики солнечного ветра, а значит, и к более точным прогнозам космической погоды и того, как она может повлиять на нас здесь, на Земле. Кодовое название: "Волны-Свистуны"<br><br>
-						<audio controls>
-							<source src="mp3/sun.mp3" type="audio/mpeg">
-							Your browser does not support the audio element.
-						</audio>
-					</div>
-				</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" crossorigin="anonymous"></script>
 
-				<section class="object is-clone"><img src="gifs/holes.gif" alt="Holes" class="gifs left holesGif"><a data-fancybox href='#5' class="fancybox" id="5clone"></a></section>
-				<section class="object is-clone"><img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif"><a data-fancybox href='#4' class="fancybox" id="4clone"></a></section>
-				<section class="object is-clone"><img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif"><a data-fancybox href='#3' class="fancybox" id="3clone"></a></section>
-				<section class="object is-clone"><img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif"><a data-fancybox href='#2' class="fancybox" id="2clone"></a></section>
-				<section class="object is-clone"><img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif"><a data-fancybox href='#1' class="fancybox" id="1clone"></a></section>
-				<section class="object is-clone"><img src="gifs/sun.gif" alt="Sun" class="gifs right marsGif"><a data-fancybox href='#6' class="fancybox" id="6clone"></a></section>
-			</div>
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
 
-			<div class="base">
-				<img src="images/base.webp" id="base">
-			</div>
-			<div class="earth">
-				<img src="images/earth.webp" id='earth'>
-			</div>
-			<div class="dish">
-				<img src="images/dish.webp" id="dish">
-			</div>
+<body>
+	<div class="container">
+		<div class="objects js-loop">
+
+			<section class="object">
+				<img src="gifs/holes.gif" alt="Holes" class="gifs left holesGif">
+				<a data-fancybox href='#5' class="fancybox" id="fancybox5"></a>
+				<div class="hidden" id="5">Звуки, которые мы слышим в этом ролике, на самом деле являются гравитационными волнами, которые образовались после столкновения двух черных дыр. Затем эти волны были преобразованы в звуковые. Кодовое название: "Столкновение черных дыр".<br><br>
+					<audio controls>
+						<source src="mp3/holes.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			</section>
+			
+			<section class="object">
+				<img src="gifs/rings.gif" alt="Rings" class="gifs right ringsGif">
+				<a data-fancybox href='#4' class="fancybox" id="fancybox4"></a>
+				<div class="hidden" id="4">Эти помехи были зафиксированы прибором Cassini Radio and Plasms Wave Science, когда аппарат пересекал плоскость колец Сатурна. Кодовое название: "Пересечение колец Сатурна".<br><br>
+					<audio controls>
+						<source src="mp3/rings.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			</section>
+
+			<section class="saturn">
+				<img src="gifs/saturn.gif" alt="Saturn" class="gifs left saturnGif">
+				<a data-fancybox href='#3' class="fancybox" id="fancybox3"></a>
+				<div class="hidden" id="3">Звук в этом ролике показывает мощное взаимодействие плазменных волн, движущихся от Сатурна к его луне Энцеладу. Кодовое название: "Звуки Сатурна".<br><br>
+					<audio controls>
+						<source src="mp3/saturn_sounds.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			</section>
+
+			<section class="object">
+				<img src="gifs/jupiter.gif" alt="Jupiter" class="gifs right jupiterGif">
+				<a data-fancybox href='#2' class="fancybox" id="fancybox2"></a>
+				<div class="hidden" id="2">Аудиоклип был зафиксирован космическим аппаратом НАСА "Юнона", когда тот пересек границу огромного магнитного поля Юпитера и попал в ударную волну. Ударная волна возникает, когда магнитосфера астрофизического объекта (в данном случае Юпитера) взаимодействует с близлежащей текучей окружающей плазмой, такой как солнечный ветер. Это похоже на звуковой удар. Кодовое название: "Рык Юпитера".<br><br>
+					<audio controls>
+						<source src="mp3/roar.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			</section>
+
+			<section class="object">
+				<img src="gifs/mars.gif" alt="Mars" class="gifs left marsGif">
+				<a data-fancybox href='#1' class="fancybox" id="fancybox1"></a>
+				<div class="hidden" id="1">Аудиоклип был снят аппаратом НАСА InSight 6 апреля 2019 года. Звук подчеркивает, насколько сейсмически шумной может быть марсианская поверхность. Кодовое название: "Марсотрясение".<br><br>
+					<audio controls>
+						<source src="mp3/marsquake.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			</section>
+
+			<section class="object">
+				<img src="gifs/sun.gif" alt="Sun" class="gifs right sunGif">
+				<a data-fancybox href='#6' class="fancybox" id="fancybox6"></a>
+				<div class="hidden" id="6">Тщательный анализ данных, полученных с зонда НАСА Parker Solar Probe в 2021 году, показал, что электромагнитные "Волны-Свистуны", названные так потому, что первые радисты принимали эти жуткие, нисходящие звуки за свист человека, неожиданно отсутствуют в некоторых областях верхней атмосферы Солнца. Это открытие может привести к лучшему пониманию физики солнечного ветра, а значит, и к более точным прогнозам космической погоды и того, как она может повлиять на нас здесь, на Земле. Кодовое название: "Волны-Свистуны"<br><br>
+					<audio controls>
+						<source src="mp3/sun.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			</section>
 		</div>
-	</body>
-	<script type="text/javascript">
 
-		function rsize(phone) {
+		<div class="base"><img src="images/base.webp" id="base"></div>
+		<div class="earth"><img src="images/earth.webp" id="earth"></div>
+		<div class="dish"><img src="images/dish.webp" id="dish"></div>
+	</div>
 
-			if (phone == true){
-				var earth = 20,
-				base = 5,
-				additional = 1,
-				mars = (10 / 3),
-				jupiter = 4,
-				saturn = 3,
-				rings = 4,
-				holes = 3,
-				sun = (10 / 3),
-				hidden = 5;
-				$('.object').css({'margin-top': '10%'});
-			} else {
-				var earth = 10,
-				base = 2,
-				additional = 0.5,
-				mars = 5,
-				jupiter = 7,
-				saturn = 5,
-				rings = (6.5),
-				holes = 5.5,
-				sun = 5,
-				hidden = 2;
-				$('.object').css({'margin-top': '2%'});
-			}
+<script>
+	function rsize(phone) {
 
+		let earth, base, additional, mars, jupiter, saturn, rings, holes, sun, hidden;
 
-			$('#earth').css({'width': `${5 * earth}%`});
-			$('#earth').css({'height': `${$('#earth').width() / 4.8}px`});
-			$('#base').css({'width': `${5 * base}%`});
-			$('#base').css({'height': `${$('#base').width() / 1.34}px`});
-			$('#dish').css({'width': `${5 * (base + additional)}%`});
-			$('#dish').css({'height': `${$('#dish').width() / 1.39}px`});
-			
-			$('.marsGif').css({'width': `${window.innerWidth / mars * 2}px`});
-			$('.jupiterGif').css({'width': `${window.innerWidth / jupiter * 2 }px`});
-			$('.saturnGif').css({'width': `${window.innerWidth / saturn * 2 }px`});
-			$('.ringsGif').css({'width': `${window.innerWidth / rings * 2 }px`});
-			$('.holesGif').css({'width': `${window.innerWidth / holes * 2 }px`});
-			$('.sunGif').css({'width': `${window.innerWidth / sun * 2 }px`});
-			
-			$('.hidden').css({'font-size': `${2 * hidden}vw`});
-		    
+		if (phone) {
+			earth = 20;
+			base = 5;
+			additional = 1;
+			mars = 10 / 3;
+			jupiter = 4;
+			saturn = 3;
+			rings = 4;
+			holes = 3;
+			sun = 10 / 3;
+			hidden = 5;
 
-		    $(".gifs.right").each(function () {
-		        $(this).css({'left': `${$('.container').width() - $(this).width()}px`});
-		    })
-
-			$('.earth').css({'height': `${$('#earth').height()}px`});
-			$('.base').css({'height': `${$('#base').height()}px`, 'bottom': `${$('#earth').height() * 3.5 / 10}px`});
-			$('.dish').css({'height': `${$('#dish').height()}px`, 'bottom': `${$('#earth').height() * 3.5 / 10 + $('#base').height() * 6.5 / 10}px`});
-		}
-
-		rsize(window.innerHeight > (window.innerWidth * 0.9));	
-
-		$(window).on('resize', function(){
-
-		    rsize(window.innerHeight > (window.innerWidth * 0.9));
-		});
-
-		var mouseXY = {};
-	    $( document ).on( "mousemove", function( event ) {
-			mouseXY.X = event.pageX; 
-			mouseXY.Y = event.pageY;
-	    });
-	    var fromTop = $(".dish");
-	    var fromLeft = $("#dish");
-	    var prevXY = {X: null, Y: null};
-	    var cowInterval = setInterval(function()
-	    {
-	    
-	      
-			if(prevXY.Y != mouseXY.Y || prevXY.X != mouseXY.X) {
-
-				var tp = fromTop.position().top;
-				var lft = fromLeft.position().left;
-				var diffX = mouseXY.X - lft;
-				var diffY = tp - mouseXY.Y;
-				var tan = diffX / diffY;
-
-				var degrees = Math.atan(tan)* 180 / Math.PI;
-				
-				if(diffX > 0 && diffY < 0) {
-					degrees += 180;
-				}
-				else if(diffX < 0 && diffY < 0) {
-					degrees -= 180;
-				}
-				
-				if(degrees >= -65 && degrees <= 65){
-					prevXY.X = mouseXY.X;
-					prevXY.Y = mouseXY.Y;
-					fromLeft.css({transform: "rotate(" + degrees + "deg)"});
-				}
-		    }
-	    }, 10);
-
-		
-		var doc = window.document,
-		context = doc.querySelector('.js-loop'),
-		clones = context.querySelectorAll('.is-clone'),
-		disableScroll = false,
-		scrollHeight = 0,
-		scrollPos = 0,
-		clonesHeight = 0,
-		i = 0;
-
-		function getScrollPos () {
-			return (context.scrollTop);
-		}
-
-		function setScrollPos (pos) {
-			context.scrollTop = pos;
-		}
-
-		function getClonesHeight () {
-			clonesHeight = 0;
-
-			for (i = 0; i < clones.length; i += 1) {
-				clonesHeight = clonesHeight + clones[i].offsetHeight;
-			}
-
-			return clonesHeight;
-			}
-
-		function reCalc () {
-			scrollPos = getScrollPos();
-			scrollHeight = context.scrollHeight;
-			clonesHeight = getClonesHeight();
-
-			if (scrollPos <= 0) {
-				setScrollPos(1); 
-			}
-		}
-
-		function scrollUpdate () {
-			if (!disableScroll) {
-			scrollPos = getScrollPos();
-
-		    if (clonesHeight + scrollPos >= scrollHeight) {   
-				setScrollPos(1);
-				disableScroll = true;
-			} else if (scrollPos <= 0) {
-				setScrollPos(scrollHeight - clonesHeight);
-				disableScroll = true;
-			}
-		}
-
-			if (disableScroll) {
-				window.setTimeout(function () {
-					disableScroll = false;
-				}, 40);
-			}
-		}
-
-		function init () {
-			reCalc();
-		  
-			context.addEventListener('scroll', function () {
-				window.requestAnimationFrame(scrollUpdate);
-			}, false);
-
-			window.addEventListener('resize', function () {
-				window.requestAnimationFrame(reCalc);
-			}, false);
-		}
-
-		if (document.readyState !== 'loading') {
-			init();
+			$('.object').css({ 'margin-top': '10%' });
 		} else {
-			doc.addEventListener('DOMContentLoaded', init, false);
+			earth = 10;
+			base = 2;
+			additional = 0.5;
+			mars = 5;
+			jupiter = 7;
+			saturn = 5;
+			rings = 6.5;
+			holes = 5.5;
+			sun = 5;
+			hidden = 2;
+
+			$('.object').css({ 'margin-top': '2%' });
 		}
 
-		$(".gifs").on("click", function() {
-			
-			if ($(this).parents('.is-clone').length){
-				var hiddenNumber = $(this).parent().children('.fancybox').attr('id').slice(0, -5);
-			} else {
-		    	var hiddenNumber = $(this).parent().children('.hidden').attr('id');
-			}
-
-		    var leftPosObject  = $(this).offset().left - $(window).scrollLeft();
-			var topPosObject   = $(this).offset().top - $(window).scrollTop();
-
-			if (!($('#signal').length)){
-
-				var signalDiv = document.createElement("div");
-				$(signalDiv).attr("id","signal");
-				$(signalDiv).css({'height': `${$('#dish').height() / 2}px`, 'width': `${$('#dish').width() / 2}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10 + $('.dish').height() * 1.1}px`, 'z-index': '5', 'position': 'relative'});
-				$(signalDiv).css({'left': `${window.innerWidth / 2 - $(signalDiv).width() / 2}px`});
-				
-				
-				var signal = document.createElement("img");
-				$(signal).css({'height': `100%`, 'width': `100%`});
-				$(signal).attr("src","images/signal.webp");
-
-				$(signalDiv).append(signal);
-	        	$('.container').append(signalDiv);
-
-	        	var leftPosSignal  = $(signalDiv).offset().left - $(window).scrollLeft();
-				var topPosSignal   = $(signalDiv).offset().top - $(window).scrollTop();
-				
-				var difx = event.pageX - leftPosSignal;
-				var dify = leftPosSignal - event.pageY;
-				var tang = difx / Math.abs(dify);
-
-				var degree = Math.atan(tang)* 180 / Math.PI;				
-				
-				$(signalDiv).css({transform: "rotate(" + degree + "deg)"});
-
-				
-				if (leftPosSignal < leftPosObject) {
-					var left = (leftPosSignal - event.pageX)
-				} else{ 
-					var left = (leftPosSignal - event.pageX)
-				}
-				var up = (topPosSignal - event.pageY)
-
-	        	$(signalDiv).animate({
-	                   'marginLeft' : `-=${left}`,
-	                   'marginTop' : `-=${up}`,
-	                   'opacity': '0.1',
-	            }, 750);
-
-	        	$(signalDiv).promise().done(function(){
-		            $(signalDiv).remove();
-
-					$(`#fancybox${hiddenNumber}`).click();
-				});
-			}
-
-
+		$('#earth').css({
+			width: `${5 * earth}%`
+		}).css({
+			height: `${$('#earth').width() / 4.8}px`
 		});
 
-		
-	</script>
+		$('#base').css({
+			width: `${5 * base}%`
+		}).css({
+			height: `${$('#base').width() / 1.34}px`
+		});
+
+		$('#dish').css({
+			width: `${5 * (base + additional)}%`
+		}).css({
+			height: `${$('#dish').width() / 1.39}px`
+		});
+
+		$('.marsGif').css({ width: `${window.innerWidth / mars * 2}px` });
+		$('.jupiterGif').css({ width: `${window.innerWidth / jupiter * 2}px` });
+		$('.saturnGif').css({ width: `${window.innerWidth / saturn * 2}px` });
+		$('.ringsGif').css({ width: `${window.innerWidth / rings * 2}px` });
+		$('.holesGif').css({ width: `${window.innerWidth / holes * 2}px` });
+		$('.sunGif').css({ width: `${window.innerWidth / sun * 2}px` });
+
+		$('.hidden').css({ 'font-size': `${2 * hidden}vw` });
+
+		$(".gifs.right").each(function () {
+			$(this).css({
+				left: `${$('.container').width() - $(this).width()}px`
+			});
+		});
+
+		$('.earth').css({ height: `${$('#earth').height()}px` });
+
+		$('.base').css({
+			height: `${$('#base').height()}px`,
+			bottom: `${$('#earth').height() * 0.35}px`
+		});
+
+		$('.dish').css({
+			height: `${$('#dish').height()}px`,
+			bottom: `${$('#earth').height() * 0.35 + $('#base').height() * 0.65}px`
+		});
+	}
+
+	rsize(window.innerHeight > window.innerWidth * 0.9);
+
+	$(window).on('resize', function () {
+		rsize(window.innerHeight > window.innerWidth * 0.9);
+	});
+
+	let mouseXY = { X: 0, Y: 0 };
+
+	$(document).on("mousemove", function (event) {
+		mouseXY.X = event.pageX;
+		mouseXY.Y = event.pageY;
+	});
+
+	const dish = $(".dish");
+	const dishImg = $("#dish");
+
+	let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+	$(document).on("mousemove", function (e) {
+		mouse.x = e.clientX;
+		mouse.y = e.clientY;
+	});
+
+	function animate() {
+		const rect = dishImg[0].getBoundingClientRect();
+
+		const dishX = rect.left + rect.width / 2;
+		const dishY = rect.top + rect.height * 0.15; 
+
+		const dx = mouse.x - dishX;
+		const dy = mouse.y - dishY;
+
+		let angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+		angle += 90;
+
+		dishImg.css({
+			transform: `rotate(${angle}deg)`
+		});
+
+		requestAnimationFrame(animate);
+	}
+
+	animate();
+
+	function setupInfiniteScroll() {
+		const context = document.querySelector('.js-loop');
+
+		const originals = Array.from(context.children)
+			.filter(el => !el.classList.contains('is-clone'));
+
+		originals.forEach(el => {
+			const clone = el.cloneNode(true);
+			clone.classList.add('is-clone');
+			context.appendChild(clone);
+		});
+
+		let locked = false;
+
+		context.addEventListener('scroll', () => {
+			if (locked) return;
+
+			const half = context.scrollHeight / 2;
+
+			if (context.scrollTop >= half) {
+				locked = true;
+				context.scrollTop -= half;
+				locked = false;
+			}
+
+			if (context.scrollTop <= 0) {
+				locked = true;
+				context.scrollTop = half;
+				locked = false;
+			}
+		});
+	}
+
+	document.addEventListener('DOMContentLoaded', setupInfiniteScroll);
+
+	$(".gifs").on("click", function(event) {
+
+		var hiddenNumber = $(this).parent().children('.hidden').attr('id');
+		var leftPosObject  = $(this).offset().left - $(window).scrollLeft();
+
+		if (!($('#signal').length)){
+
+			var signalDiv = document.createElement("div");
+			$(signalDiv).attr("id","signal");
+			$(signalDiv).css({'height': `${$('#dish').height() / 2}px`, 'width': `${$('#dish').width() / 2}px`, 'bottom': `${$('.earth').height() * 3.5 / 10 + $('.base').height() * 6.5 / 10 + $('.dish').height() * 1.1}px`, 'z-index': '5', 'position': 'relative'});
+			$(signalDiv).css({'left': `${window.innerWidth / 2 - $(signalDiv).width() / 2}px`});
+			
+			
+			var signal = document.createElement("img");
+			$(signal).css({'height': `100%`, 'width': `100%`});
+			$(signal).attr("src","images/signal.webp");
+
+			$(signalDiv).append(signal);
+			$('.container').append(signalDiv);
+
+			var leftPosSignal  = $(signalDiv).offset().left - $(window).scrollLeft();
+			var topPosSignal   = $(signalDiv).offset().top - $(window).scrollTop();
+			
+			var difx = event.pageX - leftPosSignal;
+			var dify = leftPosSignal - event.pageY;
+			var tang = difx / Math.abs(dify);
+
+			var degree = Math.atan(tang)* 180 / Math.PI;				
+			
+			$(signalDiv).css({transform: "rotate(" + degree + "deg)"});
+
+			
+			if (leftPosSignal < leftPosObject) {
+				var left = (leftPosSignal - event.pageX)
+			} else{ 
+				var left = (leftPosSignal - event.pageX)
+			}
+			var up = (topPosSignal - event.pageY)
+
+			$(signalDiv).animate({
+					'marginLeft' : `-=${left}`,
+					'marginTop' : `-=${up}`,
+					'opacity': '0.1',
+			}, 750, function () {
+				signalDiv.remove();
+				$(`#fancybox${hiddenNumber}`).click();
+			});
+		}
+	});
+
+</script>
+
+</body>
 </html>
